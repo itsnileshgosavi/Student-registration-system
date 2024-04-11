@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Registration System</title>
+    <meta name="description" content="Register here" />
+    <link rel="stylesheet" href="output.css" />
+  </head>
+  <body class="bg-[#808080]">
+    <header>
+      <!-- navbar -->
+      <nav class="flex justify-around m-5">
+        <h1
+          class="font-bold text-xl md:text-3xl bg-black text-white p-3 rounded-md cursor-pointer"
+        >
+          <a href="#"
+            >My
+            <span class="bg-cyan-600 text-black p-1 rounded">School</span></a
+          >
+        </h1>
+        <ul class="flex space-x-10 mr-5 items-center justify-evenly">
+          <li
+            class="text-white hover:underline cursor-pointer hover:text-cyan-500"
+          >
+            <a href="#">Home</a>
+          </li>
+          <li
+            class="text-white hover:underline cursor-pointer hover:text-cyan-500"
+          >
+            <a href="#list">Registered Students</a>
+          </li>
+        </ul>
+      </nav>
+      <!-- title and description -->
+      <div class="flex justify-center flex-col items-center">
+      <h1 class="text-3xl font-bold font-serif my-5">Student Registration</h1>
+      <p class="text-white">
+        This student registration site is a web-based application developed
+        using HTML, Tailwind CSS, and JavaScript. THis site utilizes a local
+        storage to store student data, and shows the registration records. You
+        can enter the details of the students in the form provided and click on
+        submit button. The information entered is then saved into your local
+        storage. You can Check the stored data anytime. The system also
+        validates the information provided and if it matches the requirements
+        then only allows the submission.
+      </p>
+    </div>
+    </header>
+    <!-- main section -->
+    <main class="flex flex-col items-center">
+      <!-- Registration form -->
+      <div
+        class="bg-slate-300 rounded shadow-lg p-4 px-4 md:p-8 mb-6 md:w-[500px] h-[600px] flex justify-center"
+      >
+        <form class="flex flex-col md:w-3/4 items-center p-5">
+          <label for="name">Full name</label>
+          <input
+            id="name"
+            type="text"
+            class="h-10 border mt-1 rounded px-4 w-full bg-gray-50 my-7"
+            placeholder="Enter your Full Name"
+            
+          />
+
+          <label for="class">Class </label>
+          <input
+            id="class"
+            type="number"
+            class="h-10 border mt-1 rounded px-4 w-full bg-gray-50 my-7"
+            placeholder="Enter your class"
+            
+          />
+
+          <label for="Address">Address</label>
+          <textarea
+            id="Address"
+            type="text"
+            class="h-20 border mt-1 rounded px-4 w-full bg-gray-50 my-7"
+            placeholder="Enter your Address"
+            
+          ></textarea>
+
+          <label for="Contact">Contact</label>
+          <input
+            id="Contact"
+            type="number"
+            class="h-10 border mt-1 rounded px-4 w-full bg-gray-50 my-7"
+            placeholder="Enter your Contact Number"
+            
+          />
+
+          <input
+            id="submitbtn"
+            type="submit"
+            value="Submit"
+            class="bg-blue-500 hover:bg-blue-700 my-7 text-white font-bold py-2 px-4 rounded hover:cursor-pointer"
+            
+          />
+        </form>
+      </div>
+      <div class="min-h-screen flex items-center flex-col max-w-full">
+        <h2 class="text-2xl text-slate-50 my-10">Registered Students</h2>
+
+        <!-- table to show stored data -->
+        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+          <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+              <th class="table-cell">Full name</th>
+              <th class="table-cell">Address</th>
+              <th class="table-cell">Contact</th>
+              <th class="table-cell">Class</th>
+              <th class="table-cell">Edit</th>
+              <th class="table-cell">Delete</th>
+            </tr>
+          </thead>
+
+          <tbody id="list">
+            <!-- student data will be loaded here dynamically -->
+          </tbody>
+        </table>
+        
+      </div>
+    </main>
+    <!-- javascript link  -->
+    <script src="index.js"></script>
+  </body>
+</html>

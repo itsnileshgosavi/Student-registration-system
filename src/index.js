@@ -167,21 +167,51 @@ const propertyNames = ["fullName", "address", "contact", "Class"];
 
 function saveEditedStudent(index) {
     const studentRow = tableBody.children[index];
+    let isValid = true; // Flag to track validation status
 
      //validating the updated data entries before saving
 
-    // Get the edited full name
+    // Get the edited details
     const fullNameCell = studentRow.cells[0];
     const editedFullName = fullNameCell.textContent.trim();
+    const  editedAddressCell = studentRow.cells[1];
+    const  editedContactCell = studentRow.cells[2];
+    const  editedClassCell = studentRow.cells[3];
+    const editedAddress =editedAddressCell.textContent.trim();
+    const editedClass =editedClassCell.textContent.trim();
+    const editedContact =editedContactCell.textContent.trim();
 
-    // Regular expression to match only letters and spaces
+   // Regular expression to match only letters and spaces
     const fullNameRegex = /^[A-Za-z\s]+$/;
+
+    // Regular expression to match only numbers
+
+    const numbersOnlyRegex = /^[0-9]+$/;
+
 
     // Validate the edited full name
     if (!fullNameRegex.test(editedFullName)) {
         alert("Full name should contain only letters and spaces");
+        isValid = false; // Set validation flag to false
+    }
+    if (editedAddress==="") {
+        alert("address cannot be empty");
+        isValid = false; // Set validation flag to false
+    }
+    if (editedContact ==="" || !numbersOnlyRegex.test(editedContact) ) {
+        alert("contact should only contain numbers and cannot be empty");
+        isValid = false; // Set validation flag to false
+    }
+    if (editedClass ==="" || !numbersOnlyRegex.test(editedClass) ) {
+        alert("class should only contain numbers and cannot be empty");
+        isValid = false; // Set validation flag to false
+    }
+
+    // If any validation error occurred, return early without saving
+    if (!isValid) {
         return;
     }
+
     // Iterate through each cell in the row (except the last two containing the edit and delete buttons)
     for (let i = 0; i < studentRow.cells.length - 2; i++) {
         const cell = studentRow.cells[i];

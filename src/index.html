@@ -10,7 +10,7 @@
   <body class="bg-[#808080]">
     <header>
       <!-- navbar -->
-      <nav class="flex justify-around m-5">
+      <nav class="flex justify-between m-5">
         <h1
           class="font-bold text-xl md:text-3xl bg-black text-white p-3 rounded-md cursor-pointer"
         >
@@ -34,8 +34,8 @@
       </nav>
       <!-- title and description -->
       <div class="flex justify-center flex-col items-center">
-      <h1 class="text-3xl font-bold font-serif my-5">Student Registration</h1>
-      <p class="text-white">
+      <h1 class="text-3xl font-bold font-serif my-5 text-gray-300">Student Registration</h1>
+      <p class="text-white p-10 text-pretty text-center">
         This student registration site is a web-based application developed
         using HTML, Tailwind CSS, and JavaScript. THis site utilizes a local
         storage to store student data, and shows the registration records. You
@@ -51,14 +51,14 @@
     <main class="flex flex-col items-center">
       <!-- Registration form -->
       <div
-        class="bg-slate-300 rounded shadow-lg p-4 px-4 md:p-8 mb-6 md:w-[500px] h-[600px] flex justify-center"
+        class="bg-[#EAF0F1] rounded shadow-lg p-4 px-4 md:p-8 mb-6 md:w-[500px] h-[600px] flex justify-center"
       >
         <form class="flex flex-col md:w-3/4 items-center p-5">
-          <label for="name">Full name</label>
+          <label for="name">Full Name</label>
           <input
             id="name"
             type="text"
-            class="h-10 border mt-1 rounded px-4 w-full bg-gray-50 my-7"
+            class="h-10 border mt-1 rounded px-4 w-full bg-[#A4B0BD] my-7 placeholder:text-slate-100"
             placeholder="Enter your Full Name"
             
           />
@@ -67,7 +67,7 @@
           <input
             id="class"
             type="number"
-            class="h-10 border mt-1 rounded px-4 w-full bg-gray-50 my-7"
+            class="h-10 border mt-1 rounded px-4 w-full bg-[#A4B0BD] my-7 placeholder:text-slate-100"
             placeholder="Enter your class"
             
           />
@@ -76,7 +76,7 @@
           <textarea
             id="Address"
             type="text"
-            class="h-20 border mt-1 rounded px-4 w-full bg-gray-50 my-7"
+            class="h-20 border mt-1 rounded px-4 w-full bg-[#A4B0BD] my-7 placeholder:text-slate-100"
             placeholder="Enter your Address"
             
           ></textarea>
@@ -85,18 +85,16 @@
           <input
             id="Contact"
             type="number"
-            class="h-10 border mt-1 rounded px-4 w-full bg-gray-50 my-7"
+            class="h-10 border mt-1 rounded px-4 w-full bg-[#A4B0BD] my-7 placeholder:text-slate-100"
             placeholder="Enter your Contact Number"
             
           />
 
-          <input
+          <button
             id="submitbtn"
-            type="submit"
-            value="Submit"
-            class="bg-blue-500 hover:bg-blue-700 my-7 text-white font-bold py-2 px-4 rounded hover:cursor-pointer"
-            
-          />
+            class="bg-blue-500 hover:bg-blue-700 my-7 text-white font-bold py-2 px-4 rounded hover:cursor-pointer">
+            Submit
+          </button>
         </form>
       </div>
       <div class="min-h-screen flex items-center flex-col max-w-full">

@@ -93,7 +93,7 @@ function handleSubmit(){
         alert("All the fields are required");
         return;
     }
-     if(contact.length<10){
+     if(contact.length !==10){
         alert("contact number must be 10 digits");
         return;
     }
@@ -196,15 +196,15 @@ function saveEditedStudent(index) {
     }
     if (editedAddress==="") {
         alert("address cannot be empty");
-        isValid = false; // Set validation flag to false
+        isValid = false; 
     }
-    if (editedContact ==="" || !numbersOnlyRegex.test(editedContact) ) {
-        alert("contact should only contain numbers and cannot be empty");
-        isValid = false; // Set validation flag to false
+    if (editedContact ==="" || !numbersOnlyRegex.test(editedContact) || editedContact.length !== 10 ) {
+        alert("Please enter valid contact number. Number should be 10 digits.");
+        isValid = false; 
     }
     if (editedClass ==="" || !numbersOnlyRegex.test(editedClass) ) {
         alert("class should only contain numbers and cannot be empty");
-        isValid = false; // Set validation flag to false
+        isValid = false; 
     }
 
     // If any validation error occurred, return early without saving

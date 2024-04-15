@@ -5,14 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Student Registration System</title>
     <meta name="description" content="Register here" />
+
+    <!-- css link  -->
     <link rel="stylesheet" href="output.css" />
+
+    <style>
+      input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        /* For Firefox */
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    </style>
   </head>
-  <body class="bg-[#808080]">
+  <body class="bg-gradient-to-br from-red-500 to-blue-500">
     <header>
       <!-- navbar -->
-      <nav class="flex justify-between m-5">
+      <nav class="flex justify-between m-1 md:m-3">
         <h1
-          class="font-bold text-xl md:text-3xl bg-black text-white p-3 rounded-md cursor-pointer"
+          class="font-bold text-sm w-fit md:text-3xl bg-slate-800 text-white p-2 md:p-3 rounded-md cursor-pointer"
         >
           <a href="#"
             >My
@@ -51,9 +65,9 @@
     <main class="flex flex-col items-center">
       <!-- Registration form -->
       <div
-        class="bg-[#EAF0F1] rounded shadow-lg p-4 px-4 md:p-8 mb-6 md:w-[500px] h-[600px] flex justify-center"
+        class="bg-gradient-to-b from-orange-200 to-green-200 rounded shadow-lg p-4 px-4 md:p-8 mb-6 md:w-[500px] h-[600px] flex justify-center"
       >
-        <form class="flex flex-col md:w-3/4 items-center p-5">
+        <form class="flex flex-col md:w-3/4 items-center p-5 ">
           <label for="name">Full Name</label>
           <input
             id="name"
@@ -76,7 +90,7 @@
           <textarea
             id="Address"
             type="text"
-            class="h-20 border mt-1 rounded px-4 w-full bg-[#A4B0BD] my-7 placeholder:text-slate-100"
+            class="h-20 border mt-1 rounded px-4 w-full bg-[#A4B0BD] my-7 placeholder:text-slate-100 appearance-none"
             placeholder="Enter your Address"
             
           ></textarea>
@@ -85,8 +99,8 @@
           <input
             id="Contact"
             type="number"
-            class="h-10 border mt-1 rounded px-4 w-full bg-[#A4B0BD] my-7 placeholder:text-slate-100"
-            placeholder="Enter your Contact Number"
+            class="h-10 border mt-1 rounded px-4 w-full bg-[#A4B0BD] my-7 placeholder:text-slate-100 appearance-none"
+            placeholder="Enter mobile Number"
             
           />
 
@@ -95,16 +109,18 @@
             class="bg-blue-500 hover:bg-blue-700 my-7 text-white font-bold py-2 px-4 rounded hover:cursor-pointer">
             Submit
           </button>
+          <input type="reset" value="Reset" class="btn-red">
         </form>
       </div>
-      <div class="min-h-screen flex items-center flex-col max-w-full">
+      <div class="min-h-screen flex items-center flex-col w-screen overflow-auto">
         <h2 class="text-2xl text-slate-50 my-10">Registered Students</h2>
 
         <!-- table to show stored data -->
-        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-          <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <div class="relative overflow-x-auto shadow-md sm:rounded-lg overflow-auto">
+        <table class="text-sm text-left rtl:text-right text-gray-200 dark:text-gray-400">
+          <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 ">
             <tr>
-              <th class="table-cell">Full name</th>
+              <th class="table-cell">Full-Name</th>
               <th class="table-cell">Address</th>
               <th class="table-cell">Contact</th>
               <th class="table-cell">Class</th>
@@ -117,7 +133,7 @@
             <!-- student data will be loaded here dynamically -->
           </tbody>
         </table>
-        
+      </div>
       </div>
     </main>
     <!-- javascript link  -->

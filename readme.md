@@ -19,7 +19,7 @@ The Student Registration System is a web application that allows users to regist
 
 1. Clone the repository to your local machine:
 
-2. Open the `index.html` file in your web browser to launch the application.
+2. Open the `index.html` file present inside src folder in your web browser to launch the application.
 
 ## Usage
 
